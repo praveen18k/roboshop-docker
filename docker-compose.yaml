@@ -33,7 +33,7 @@ services:
       target: /data
       type: volume
   user:
-    image: praveenkothapally/user:v1
+    image: joindevops/user:v1
     container_name: user
     networks:
       - roboshop
