@@ -8,7 +8,7 @@ volumes:
   rabbitmq:
 services:
   mongodb:
-    image: praveenkothapally/mongodb:v1
+    image: joindevops/mongodb:v1
     container_name: mongodb
     networks:
       - roboshop
@@ -17,7 +17,7 @@ services:
       target: /data/db
       type: volume
   catalogue:
-    image: praveenkothapally/catalogue:v1
+    image: joindevops/catalogue:v1
     container_name: catalogue
     networks:
     - roboshop
@@ -41,7 +41,7 @@ services:
       - mongodb
       - redis
   cart:
-    image: praveenkothapally/cart:v1
+    image: joindevops/cart:v1
     container_name: cart
     networks:
       - roboshop
@@ -49,7 +49,7 @@ services:
       - redis
       - catalogue
   mysql:
-    image: praveenkothapally/mysql:v1
+    image: joindevops/mysql:v1
     container_name: mysql
     networks:
       - roboshop
@@ -58,7 +58,7 @@ services:
       target: /var/lib/mysql
       type: volume
   shipping:
-    image: praveenkothapally/shipping:v1
+    image: joindevops/shipping:v1
     container_name: shipping
     networks:
       - roboshop
@@ -78,7 +78,7 @@ services:
     - RABBITMQ_DEFAULT_USER=roboshop
     - RABBITMQ_DEFAULT_PASS=roboshop123
   payment:
-    image: praveenkothapally/payment:v1
+    image: joindevops/payment:v1
     container_name: payment
     networks:
       - roboshop
@@ -87,7 +87,7 @@ services:
       - user
       - rabbitmq
   web:
-    image: praveenkothapally/web:v1
+    image: joindevops/web:v1
     container_name: web
     networks:
     - roboshop
